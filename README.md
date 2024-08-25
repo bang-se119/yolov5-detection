@@ -1,10 +1,17 @@
 # Yolov5 Detection Demo
 YOLOv5 has been designed to be super easy to get started and simple to learn. We prioritize real-world results.
 ![Logo](https://user-images.githubusercontent.com/26833433/155040763-93c22a27-347c-4e3c-847a-8094621d3f4e.png)
-## Contact
+
+## Contacts
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bangdd/)
 
-### Preparing
+## A - Demo
+| Before training | After training |
+| :----- | :---- |
+| <img width="360" alt="image" src="https://github.com/user-attachments/assets/898234ac-dc6a-4da1-a55f-b963ea7d7453"> | <img width="365" alt="image" src="https://github.com/user-attachments/assets/8232613a-e8df-4efe-a8f7-67e3b2a44c64"> |
+
+## B - Preparing
+### Documents
 - [Github Repo](https://github.com/ultralytics/yolov5)
 - [Train custom data](https://docs.ultralytics.com/yolov5/tutorials/train_custom_data/#before-you-start)
 
@@ -17,7 +24,7 @@ YOLOv5 has been designed to be super easy to get started and simple to learn. We
 ```bash
 cd yolov5
 pip install ultralytics
-pip install -r requirements.txt  # install
+pip install -r requirements.txt  
 ```
 
 ### Inference with detect.py
@@ -37,9 +44,9 @@ python detect.py --weights yolov5s.pt --source 0                               #
 ## --options
 | No | --option                    | Meaning                                                                                                                                                                                                                      |
 | :- | :-------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1  | `--img` or `--img-size`     | **Ý nghĩa**: Xác định kích thước ảnh đầu vào cho mô hình (ví dụ: --img 640 có nghĩa là ảnh đầu vào có kích thước 640x640).<br>**Mặc định**: 640.                                                                             |
+| 1  | `--img` <br>or <br>`--img-size`     | **Ý nghĩa**: Xác định kích thước ảnh đầu vào cho mô hình (ví dụ: --img 640 có nghĩa là ảnh đầu vào có kích thước 640x640).<br>**Mặc định**: 640.                                                                             |
 | 2  | `--epochs`                  | **Ý nghĩa**: Số lượng chu kỳ (epochs) mà mô hình sẽ huấn luyện trên tập dữ liệu. Một epoch là một lần duyệt qua toàn bộ tập dữ liệu huấn luyện.<br>**Mặc định**: 300                                                         |
-| 3  | `--batch` or `--batch-size` | **Ý nghĩa**: Kích thước batch, số lượng mẫu sẽ được xử lý trong một lần cập nhật trọng số.<br>**Mặc định**: 16 hoặc 32 (tùy thuộc vào cấu hình phần cứng và script).                                                         |
+| 3  | `--batch` <br>or <br>`--batch-size` | **Ý nghĩa**: Kích thước batch, số lượng mẫu sẽ được xử lý trong một lần cập nhật trọng số.<br>**Mặc định**: 16 hoặc 32 (tùy thuộc vào cấu hình phần cứng và script).                                                         |
 | 4  | `--data`                    | **Ý nghĩa**: Đường dẫn đến tệp cấu hình dữ liệu, ví dụ như items_datasets.yaml, tệp này chỉ định vị trí của tập huấn luyện, tập kiểm tra, và các lớp của dữ liệu.<br>**Mặc định**: coco128.yaml.                             |
 | 5  | `--weights`                 | **Ý nghĩa**: Đường dẫn đến tệp trọng số của mô hình ban đầu, như yolov5s.pt. Nếu không được chỉ định, mô hình sẽ được huấn luyện từ đầu (từ các trọng số ngẫu nhiên).<br>**Mặc định**: Trọng số khởi tạo của mô hình YOLOv5. |
 | 6  | `--nosave`                  | **Ý nghĩa**: Nếu chỉ định tùy chọn này, mô hình sẽ không lưu các trọng số cuối cùng sau khi huấn luyện.<br>**Mặc định**: Mô hình sẽ tự động lưu trọng số tốt nhất và cuối cùng.                                              |
@@ -59,14 +66,13 @@ python detect.py --weights yolov5s.pt --source 0                               #
 | 20 | `--exist-ok`                | **Ý nghĩa**: Nếu thư mục lưu kết quả đã tồn tại, không ghi đè và tiếp tục ghi vào đó.<br>**Mặc định**: Tạo thư mục mới nếu thư mục đã tồn tại.                                                                               |
 | 21 | `--evolve`                  | **Ý nghĩa**: Tự động tối ưu các siêu tham số (hyperparameters) trong quá trình huấn luyện.<br>**Mặc định**: Không sử dụng tối ưu siêu tham số.                                                                               |
 
-## Getting started
-### 1. Datasets
-- Tool: https://universe.roboflow.com
-- Public dataset: https://universe.roboflow.com/?ref=ultralytics 
+## Getting Started
+### 1. Create Datasets
+- [Roboflow](https://roboflow.com/#)
+- [Public Datasets](https://universe.roboflow.com/?ref=ultralytics)
 
 ### 2. Setup
-- Create file .yaml in yolov5/data
-(——————threeitems.yaml——————)
+- Create file **.yaml** in yolov5/data (Example: **threeitems.yaml**)
 ```threeitems.yaml
 # Ultralytics YOLOv5 🚀, AGPL-3.0 license
 # Example usage: python train.py --data threeitems.yaml
@@ -85,8 +91,8 @@ test: test/images/                  # test images (optional)
 
 # Classes (List up label annotated for items when creating datasets)
 names:
-  0: person
-  1: pen
+  0: person 
+  1: pen    
 ```
 
 ## 3. Training
@@ -97,11 +103,5 @@ $ python train.py --img 640 --batch 16 --epochs 100 --data items_datasets.yaml -
 
 ### Detect
 ```bash
-$ python detect.py --weight runs/train/exp3/weights/last.pt --source /Users/dangduybang/Downloads/threeitem.mp4
-```
-
-### Result
-- Detect by webcam từ trọng số mô hình vừa được training
-```bash
-python detect.py --weight runs/train/exp3/weights/last.pt --source 0
+$ python detect.py --weight runs/train/exp3/weights/last.pt --source /.../threeitem.mp4
 ```
