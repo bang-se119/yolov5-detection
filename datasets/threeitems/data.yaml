@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['airpod minion', 'mint hall', 'sancoba eyes']
+
+roboflow:
+  workspace: dang-duy-bang
+  project: detect-items-hg4gn
+  version: 2
+  license: MIT
+  url: https://universe.roboflow.com/dang-duy-bang/detect-items-hg4gn/dataset/2

@@ -1,0 +1,24 @@
+# Ultralytics YOLOv5 🚀, AGPL-3.0 license
+# threeitems dataset is trained by roboflow (28 images from COCO train2017) by BangDD (Rogs)
+# Example usage: python train.py --data coco128.yaml
+# parent
+# ├── yolov5
+# ├── originals
+# |   └── threeitems.mp4
+# └── datasets
+#     └── threeitems  ← downloads and saves the dataset here
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../datasets/threeitems         # dataset root dir
+train: train/images/ 		     # train images (relative to 'path') xxx images
+val: valid/images/ 		     # val images (relative to 'path') xxx images
+test: test/images/          	     # test images (optional)
+
+# Classes (List up label annotated for item when creating datasets)
+names:
+  0: airpod minion
+  1: mint hall
+  2: sancoba eyes
+
+# Download script/URL (optional)
+# download: <<https://link.zip>> (uncomment out if existing link)
